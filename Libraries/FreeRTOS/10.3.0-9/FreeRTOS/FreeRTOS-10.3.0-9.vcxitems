@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Globals">
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <ItemsProjectGuid>{12d55ff2-85ab-4d1d-897e-ecbb6addce6d}</ItemsProjectGuid>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectCapability Include="SourceItemsFromImports" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\croutine.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\event_groups.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\heap_4.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\list.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\port.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\queue.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\stream_buffer.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\tasks.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\timers.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\variantHooks.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\Arduino_FreeRTOS.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\croutine.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\event_groups.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\FreeRTOSConfig.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\FreeRTOSVariant.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\list.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\message_buffer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\mpu_wrappers.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\portable.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\portmacro.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\projdefs.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\queue.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\semphr.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\stack_macros.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\stream_buffer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\task.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\timers.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="$(MSBuildThisFileDirectory)library.properties" />
+    <Text Include="$(MSBuildThisFileDirectory)src\history.txt" />
+    <Text Include="$(MSBuildThisFileDirectory)src\license.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)readme.md" />
+  </ItemGroup>
+</Project>
