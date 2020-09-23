@@ -34,11 +34,6 @@ void Pin_Command(String raw_input)
 	pin = raw_input.substring(commandend + 1, pinend);
 	argument = raw_input.substring(pinend +1);
 
-
-	Serial.println(command);
-	Serial.println(pin);
-	Serial.println(argument);
-
 	CommandInterpreter();
 }
 

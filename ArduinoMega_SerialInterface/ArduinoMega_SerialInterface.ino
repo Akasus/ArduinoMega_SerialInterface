@@ -5,10 +5,6 @@
 */
 
 //includes
-#include "SerialPinManager.h"
-#include "GPIOPort.h"
-#include "fightingTasks.h"
-#include <Arduino_FreeRTOS.h>
 #include "TaskCollection.h"
 
 // the setup function runs once when you press reset or power the board
