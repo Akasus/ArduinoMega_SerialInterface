@@ -59,6 +59,12 @@ void CommandInterpreter()
 	{
 		PinInfo(pin.toInt());
 	}
+	else if(command.equalsIgnoreCase("test"))
+	{
+		Serial.print(command);
+		Serial.print(pin);
+		Serial.println(argument);
+	}
 	else
 	{
 		Serial.println(COLOR_BOLDRED "Invalid PIN command! type in 'pin help' for more info!" COLOR_RESET);

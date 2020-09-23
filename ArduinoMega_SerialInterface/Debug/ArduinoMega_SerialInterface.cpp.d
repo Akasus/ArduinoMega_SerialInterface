@@ -11,9 +11,8 @@ C:\Users\Akasu\AppData\Local\Temp\VMBuilds\ArduinoMega_SerialInterface\mega_atme
  C:\Users\Akasu\AppData\Local\arduino15\packages\arduino\hardware\avr\1.8.3\cores\arduino/USBAPI.h \
  C:\Users\Akasu\AppData\Local\arduino15\packages\arduino\hardware\avr\1.8.3\cores\arduino/Arduino.h \
  C:\Users\Akasu\AppData\Local\arduino15\packages\arduino\hardware\avr\1.8.3\variants\mega/pins_arduino.h \
- C:\Users\Akasu\AppData\Local\Temp\VMBuilds\ArduinoMega_SerialInterface\mega_atmega2560\Debug\SerialPinManager.h \
- C:\Users\Akasu\AppData\Local\Temp\VMBuilds\ArduinoMega_SerialInterface\mega_atmega2560\Debug\GPIOPort.h \
- C:\Users\Akasu\AppData\Local\Temp\VMBuilds\ArduinoMega_SerialInterface\mega_atmega2560\Debug\fightingTasks.h \
+ C:\Users\Akasu\AppData\Local\Temp\VMBuilds\ArduinoMega_SerialInterface\mega_atmega2560\Debug\TaskCollection.h \
+ C:\Users\Akasu\AppData\Local\Temp\VMBuilds\ArduinoMega_SerialInterface\mega_atmega2560\Debug\LifeLedTask.h \
  D:\Entwicklung\Embedded\Arduino\ArduinoMega_SerialInterface\Libraries\FreeRTOS\10.3.0-9\FreeRTOS\src/Arduino_FreeRTOS.h \
  D:\Entwicklung\Embedded\Arduino\ArduinoMega_SerialInterface\Libraries\FreeRTOS\10.3.0-9\FreeRTOS\src/FreeRTOSConfig.h \
  D:\Entwicklung\Embedded\Arduino\ArduinoMega_SerialInterface\Libraries\FreeRTOS\10.3.0-9\FreeRTOS\src/projdefs.h \
@@ -24,7 +23,6 @@ C:\Users\Akasu\AppData\Local\Temp\VMBuilds\ArduinoMega_SerialInterface\mega_atme
  D:\Entwicklung\Embedded\Arduino\ArduinoMega_SerialInterface\Libraries\FreeRTOS\10.3.0-9\FreeRTOS\src/Arduino_FreeRTOS.h \
  D:\Entwicklung\Embedded\Arduino\ArduinoMega_SerialInterface\Libraries\FreeRTOS\10.3.0-9\FreeRTOS\src/task.h \
  D:\Entwicklung\Embedded\Arduino\ArduinoMega_SerialInterface\Libraries\FreeRTOS\10.3.0-9\FreeRTOS\src/list.h \
- C:\Users\Akasu\AppData\Local\Temp\VMBuilds\ArduinoMega_SerialInterface\mega_atmega2560\Debug\TaskCollection.h \
- C:\Users\Akasu\AppData\Local\Temp\VMBuilds\ArduinoMega_SerialInterface\mega_atmega2560\Debug\LifeLedTask.h \
  C:\Users\Akasu\AppData\Local\Temp\VMBuilds\ArduinoMega_SerialInterface\mega_atmega2560\Debug\SerialTask.h \
- C:\Users\Akasu\AppData\Local\arduino15\packages\arduino\hardware\avr\1.8.3\cores\arduino/Arduino.h
+ C:\Users\Akasu\AppData\Local\arduino15\packages\arduino\hardware\avr\1.8.3\cores\arduino/Arduino.h \
+ C:\Users\Akasu\AppData\Local\Temp\VMBuilds\ArduinoMega_SerialInterface\mega_atmega2560\Debug\fightingTasks.h

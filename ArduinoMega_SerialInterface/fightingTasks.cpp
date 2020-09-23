@@ -9,12 +9,17 @@
 
 void prvTask1(void* pvParameters);
 
+shiftPort port(4,);
+#define data_pin 22
+#define clock_pin 24
+#define latch_pin 23
 
-shiftPort port(22,24,23);
 
 void Init()
 {
-	
+	pinMode(data_pin, OUTPUT);
+	pinMode(clock_pin, OUTPUT);
+	pinMode(latch_pin, OUTPUT);
 }
 
 
@@ -32,20 +37,14 @@ void prvTask1(void* pvParameters)
 	
 	while (1)
 	{
-		i = 0;
-		for(;i< 256;i++)
+		for (int i = 0; i < 24; i++)
 		{
-			port.Write(i);
-			vTaskDelay(50 / portTICK_PERIOD_MS );
-		}
-		for(;i>= 0;i--)
-		{
-			port.Write(i);
+			port.SetBit(i, HIGH);
+			if (i > 0)
+				port.SetBit(i - 1, LOW);
 			vTaskDelay(50 / portTICK_PERIOD_MS);
+			
 		}
+		vTaskDelay(10 / portTICK_PERIOD_MS);
 	}
 }
-
-
-
-
