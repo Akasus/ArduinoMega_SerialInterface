@@ -7,6 +7,7 @@
 #include "task.h"
 #include "ANSICodes.h"
 #include "stdint.h"
+#include "SerialPinManager.h"
 
 //Macros
 
@@ -24,6 +25,7 @@ void parseCommand(const String command,const String param);
 void debug_Out(const char* str, bool success);
 void printHelp();
 void ShowTasks();
+void TogglePin(unsigned int pin);
 
 
 //Globals
@@ -38,7 +40,7 @@ static char taskBuffer[512];
 void StartSerialTask()
 {
 	Serial.begin(BAUDRATE);
-    xTaskCreate(prv_rx_read, "RX_Task", 160, NULL, tskIDLE_PRIORITY + 1, NULL);
+    xTaskCreate(prv_rx_read, "RX_Task", 512, NULL, tskIDLE_PRIORITY + 1, NULL);
 }
 
 
@@ -62,9 +64,10 @@ static void prv_rx_read(void* pvParameters) // Serial Task
         {
             if (rx_BufferCtr < RX_BUFFER_SIZE)
             {
+               
                 rx_Buffer += (char)Serial.read();
                 rx_BufferCtr++;
-                Serial.write(rx_Buffer[rx_BufferCtr - 1]);
+                Serial.print(rx_Buffer.charAt(rx_BufferCtr -1));
             }
             else
             {
@@ -75,12 +78,13 @@ static void prv_rx_read(void* pvParameters) // Serial Task
             	
             }
 
-        	if(rx_Buffer[rx_BufferCtr -1] == '\n' ||rx_Buffer[rx_BufferCtr -1] == '\r')
-        	{
+            if (rx_Buffer[rx_BufferCtr - 1] == '\n' || rx_Buffer[rx_BufferCtr - 1] == '\r')
+            {
                 Serial.println();
                 handleCommand();
                 rx_BufferCtr = 0;
-        	}
+            }
+        	
             else if(rx_Buffer[rx_BufferCtr -1] == '\177')
             {
 	            if(rx_BufferCtr <= 1)
@@ -101,10 +105,10 @@ static void prv_rx_read(void* pvParameters) // Serial Task
                     i++;
 	            }
                 Serial.write('\r');
-                rx_Buffer.remove(rx_BufferCtr -1);
+                rx_Buffer.remove(rx_Buffer.length()-1);
                 if (rx_BufferCtr >= 2)
                 {
-                    rx_Buffer.remove(rx_BufferCtr -2);
+                    rx_Buffer.remove(rx_Buffer.length() -1);
                     rx_BufferCtr -= 2;
                 }
                 else
@@ -184,11 +188,15 @@ void parseCommand(const String command,const String param)
     {
         resetFunc();
     }
+	else if(command == "pin")
+	{
+        Pin_Command(param);
+        printPrompt();
+	}
     else
     {
         printPrompt(COLOR_BOLDRED"Invalid command! type in 'help' for more info!" COLOR_RESET endl);
     }
-
 }
 
 void printHelp()
@@ -200,6 +208,7 @@ void printHelp()
     Serial.println("        tasks   ->  List the tasks and those states");
     Serial.println("        start   ->  starts a task");
     Serial.println("        stop    ->  stops a task");
+    Serial.println("        pin     ->  Serial Pin functions");
     Serial.println(endl endl);
     Serial.println("Syntax Structure: <command> <parameter>" endl);
     printPrompt();
@@ -248,29 +257,33 @@ void ShowTasks()
     Serial.print("\033[s");
     do
     {
-        Serial.print("\033[u");
-        if (over1)
-        {
-            for (int f = 0; f < linecount; f++)
-            {
-                Serial.println("\033[K");
-            }
-            linecount = 0;
-            Serial.print("\033[u");
-        }
-        over1 = true;
-    	
+        oldlinecount = linecount;
+        linecount = 0;
         vTaskList(taskBuffer);
         i = 0;
-    	while(taskBuffer[i] != '\0')
-    	{
+        while (taskBuffer[i] != '\0')
+        {
             if (taskBuffer[i] == '\r')
                 linecount++;
             i++;
-    	}
-    	
+        }
+        if (over1)
+        {
+            Serial.printf("\033[%dA", oldlinecount);
+            for (int f = 0; f < oldlinecount; f++)
+            {
+                Serial.println("\033[K");
+            }
+            Serial.printf("\033[%dA", oldlinecount);
+        }
         Serial.print(taskBuffer);
-            	
+        over1 = true;
+    	
+        /*for (int f = 0; f < oldlinecount - linecount; f++)
+        {
+            Serial.println("\033[K");
+        }*/
+        
         vTaskDelay(250 / portTICK_PERIOD_MS);
     } while ((Serial.read() != '\033'));
 

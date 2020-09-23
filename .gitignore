@@ -1,0 +1,9 @@
+﻿################################################################################
+# Diese .gitignore-Datei wurde von Microsoft(R) Visual Studio automatisch erstellt.
+################################################################################
+
+/.vs/ArduinoMega_SerialInterface/v16/Browse.VC.db
+/.vs/ArduinoMega_SerialInterface/v16/Browse.VC.db-shm
+/.vs/ArduinoMega_SerialInterface/v16/Browse.VC.opendb
+/.vs/ArduinoMega_SerialInterface/v16/Browse.VC.db-wal
+/.vs/ArduinoMega_SerialInterface/v16/.suo

@@ -1,7 +1,7 @@
 // fightingTasks.h
 
-#ifndef _FIGHTINGTASKS_h
-#define _FIGHTINGTASKS_h
+#ifndef FIGHTINGTASKS_H
+#define FIGHTINGTASKS_H
 
 #if defined(ARDUINO) && ARDUINO >= 100
 	#include "arduino.h"

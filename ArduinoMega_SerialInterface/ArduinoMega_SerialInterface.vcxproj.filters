@@ -13,6 +13,18 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\tasks">
+      <UniqueIdentifier>{e4edef49-1d85-4571-8ee0-f14c225f1f4c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\tasks">
+      <UniqueIdentifier>{bdef3269-3f58-4eea-a752-90cfbc6600a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\SerialPogramms">
+      <UniqueIdentifier>{5f266035-0b5d-498d-a7ac-dc7bec8cb3ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SerialPogramms">
+      <UniqueIdentifier>{d7318f0d-2ee1-42f7-870f-66ec1a9bff66}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="ArduinoMega_SerialInterface.ino" />
@@ -21,27 +33,39 @@
     <ClInclude Include="__vm\.ArduinoMega_SerialInterface.vsarduino.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SerialTask.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="LifeLedTask.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="TaskCollection.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="fightingTasks.h">
+      <Filter>Header Files\tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="LifeLedTask.h">
+      <Filter>Header Files\tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="SerialTask.h">
+      <Filter>Header Files\tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="SerialPinManager.h">
+      <Filter>Header Files\SerialPogramms</Filter>
+    </ClInclude>
+    <ClInclude Include="shiftPort.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="SerialTask.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="fightingTasks.cpp">
+      <Filter>Source Files\tasks</Filter>
     </ClCompile>
     <ClCompile Include="LifeLedTask.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\tasks</Filter>
     </ClCompile>
-    <ClCompile Include="fightingTasks.cpp">
+    <ClCompile Include="SerialTask.cpp">
+      <Filter>Source Files\tasks</Filter>
+    </ClCompile>
+    <ClCompile Include="SerialPinManager.cpp">
+      <Filter>Source Files\SerialPogramms</Filter>
+    </ClCompile>
+    <ClCompile Include="shiftPort.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

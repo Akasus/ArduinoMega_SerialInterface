@@ -114,17 +114,26 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="fightingTasks.h" />
+    <ClInclude Include="shiftPort.h" />
     <ClInclude Include="LifeLedTask.h" />
+    <ClInclude Include="SerialPinManager.h" />
     <ClInclude Include="SerialTask.h" />
     <ClInclude Include="TaskCollection.h" />
     <ClInclude Include="__vm\.ArduinoMega_SerialInterface.vsarduino.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="fightingTasks.cpp" />
+    <ClCompile Include="shiftPort.cpp" />
     <ClCompile Include="LifeLedTask.cpp" />
+    <ClCompile Include="SerialPinManager.cpp" />
     <ClCompile Include="SerialTask.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties arduino.upload.port="COM4" />
+    </VisualStudio>
+  </ProjectExtensions>
 </Project>

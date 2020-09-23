@@ -5,6 +5,8 @@
 */
 
 //includes
+#include "SerialPinManager.h"
+#include "GPIOPort.h"
 #include "fightingTasks.h"
 #include <Arduino_FreeRTOS.h>
 #include "TaskCollection.h"
